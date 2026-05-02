@@ -1,0 +1,10 @@
+name = "smart-language-app-backend"
+compatibility_date = "2024-02-08"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "smart-language-db"
+database_id = "5348edd1-d95b-4ee4-a565-12d0c7618c9c" # Updated with your ID
+
+[vars]
+# JWT_SECRET = "your-secret"

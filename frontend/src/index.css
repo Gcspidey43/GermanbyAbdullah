@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: rgba(15, 23, 42, 0.4);
+  --card-foreground: #f8fafc;
+  --popover: #020617;
+  --popover-foreground: #f8fafc;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #818cf8;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.03);
+  --ring: #6366f1;
+  --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-indigo-500/30 overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* 100k Developer Polish Utilities */
+
+.mesh-gradient {
+  background: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+.glass-panel {
+  @apply bg-slate-900/40 backdrop-blur-[20px] border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+}
+
+.glass-card {
+  @apply bg-white/[0.03] backdrop-blur-[12px] border border-white/10 hover:border-white/20 transition-all duration-500;
+}
+
+.glow-indigo {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-slate-400;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}

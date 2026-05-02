@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SmartLanguage</string>
+    <string name="title_activity_main">SmartLanguage</string>
+    <string name="package_name">com.german.abdullah</string>
+    <string name="custom_url_scheme">com.german.abdullah</string>
+</resources>
